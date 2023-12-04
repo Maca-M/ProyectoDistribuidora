@@ -1,0 +1,56 @@
+/* Enlaces */
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: #ff1414;
+}
+
+/* Menú */
+#menu, #menu ul {
+    height: 30px;
+    background: #fcc;
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul {
+    display: flex;
+    flex: 3;
+    align-items: center;
+    justify-content: center;
+}
+
+#menu li {
+    text-align: center;
+    display: block;
+    flex: 1;
+}
+
+/* Contenido */
+#contenido {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 10px;
+}
+
+/* Productos */
+#products {
+    width: 80%;
+    border-collapse: collapse;
+    border: 1px solid black;
+}
+
+#products td, #products th {
+    border: 1px solid black;
+}
+
+#products th {
+    width: 25%;
+    border: 1px solid black;
+    background: #ffecf0;
+}
