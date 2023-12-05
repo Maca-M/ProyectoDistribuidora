@@ -1,4 +1,3 @@
-
 <h3>Productos</h3>
 <table id="products">
     <tr>

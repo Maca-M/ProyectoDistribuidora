@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Inicio</title>
-        <link rel="stylesheet" href="assets/css/styles.css"/>
+        <link rel="stylesheet" href="<?=base_url?>assets/css/styles.css"/>
     </head>
     <body>
         <nav id="menu">
