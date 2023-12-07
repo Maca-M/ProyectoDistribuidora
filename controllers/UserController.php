@@ -1,5 +1,5 @@
 <?php
-require_once 'models/user.php';
+require_once 'entity/user.php';
 
 class UserController{
     
@@ -10,13 +10,14 @@ class UserController{
     
     public function save() {
         if(isset($_POST)){
-            $name = isset($_POST['name']) ? $_POST['name'] : false;
-            $pass = isset($_POST['pass']) ? $_POST['pass'] : false;
+            $name = isset($_POST['name']) ? htmlspecialchars($_POST['name']) : false;
+            $pass = isset($_POST['pass']) ? htmlspecialchars($_POST['pass']) : false;
+
             
             if($name && $pass){
                 $user = new User();
-                $user->setName($name)
-                    ->setPass($pass);
+                $user->setName($name);
+                $user->setPass($pass);
                 $save = $user->save();
 
                 if($save){
@@ -36,12 +37,22 @@ class UserController{
     public function login() {
         if(isset($_POST)){
             $user = new User();
-            $user->setName($_POST['name'])
-                ->setPass($_POST['pass']);
+            $user->setName($_POST['name']);
+            $user->setPass($_POST['pass']);
             
             $identity = $user->login();
+            
+            if($identity && is_object($identity)){
+                $_SESSION['identity'] = $identity;
+                
+                if($identity->role == 'admin'){
+                    $_SESSION['admin'] = true;
+                }
+            }else{
+                $_SESSION['error'] = 'Acceso fallido';
+            }
         }
-        header("Location:".base_url);
+        header("Location:".base_url."Product/index");
     }
     
 }

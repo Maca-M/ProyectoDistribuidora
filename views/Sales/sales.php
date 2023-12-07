@@ -1,17 +1,17 @@
-<h3 id="h3">Productos</h3>
-<table id="products">
+<h3 id="h3">Sales</h3>
+<table id="sales">
     <tr>
         <th>
             Codigo
         </th>
         <th>
-            Nombre
+           Cliente
         </th>
         <th>
-            Desc
+            Total
         </th>
         <th>
-            Precio
+           Fecha
         </th>
     </tr>
     <tr>
@@ -23,4 +23,3 @@
         </td>
     </tr>
 </table>
-

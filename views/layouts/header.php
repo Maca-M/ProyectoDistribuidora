@@ -5,21 +5,21 @@
         <title>Inicio</title>
         <link rel="stylesheet" href="<?=base_url?>assets/css/styles.css"/>
     </head>
-    <body>
+    <body id="header">
         <nav id="menu">
             <ul>
                 <li>
-                    <a href="products.php">
+                    <a href="<?=base_url?>Product/index">
                         Productos
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?=base_url?>Client/index">
                         Clientes
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="<?=base_url?>Sale/index">
                         Ventas
                     </a>
                 </li>

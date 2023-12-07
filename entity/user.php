@@ -21,7 +21,7 @@ class User{
     }
 
     public function getPass() {
-        return $this->pass;
+        return password_hash($this->db->real_escape_string($this->pass), PASSWORD_BCRYPT, ['cost' => 4]);
     }
 
     public function getRol() {
@@ -37,7 +37,7 @@ class User{
     }
 
     public function setPass($pass): void {
-        $this->pass = password_hash($this->db->real_escape_string($pass), PASSWORD_BCRYPT, ['cost' => 4]);
+        $this->pass = $pass;
     }
 
     public function setRol($rol): void {
@@ -56,8 +56,8 @@ class User{
     }
     
     public function login() {
-        $name = $this->getName();
-        $pass = $this->getPass();
+        $name = $this->name;
+        $pass = $this->pass;
         
         $sql = "SELECT * FROM users WHERE name = '$name';";
         $login = $this->db->query($sql);

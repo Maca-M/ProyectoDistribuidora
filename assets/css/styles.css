@@ -1,56 +1,114 @@
-/* Enlaces */
-a {
-    text-decoration: none;
-    color: black;
-}
-
-a:hover {
-    color: #ff1414;
-}
-
-/* Menú */
-#menu, #menu ul {
-    height: 30px;
-    background: #fcc;
+/* Estilos generales */
+body, h1, h2, h3, p {
     margin: 0;
     padding: 0;
 }
 
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    height: 100vh;
+}
+
+/* Header */
+#header {
+    background-color: #f4f4f4;
+}
+
+/* Menú de navegación */
+#menu {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    margin: 0 auto;
+}
+
 #menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
     display: flex;
-    flex: 3;
-    align-items: center;
     justify-content: center;
 }
 
-#menu li {
-    text-align: center;
-    display: block;
-    flex: 1;
+#menu ul li {
+    margin: 0 30px;
 }
 
-/* Contenido */
+#menu a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+
+#menu a:hover {
+    color: #4caf50;
+}
+
+/* Contenido principal */
 #contenido {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin: 10px;
+    margin: 20px;
 }
 
-/* Productos */
-#products {
-    width: 80%;
+/* Tabla de productos */
+table {
+    width: 100%;
     border-collapse: collapse;
-    border: 1px solid black;
+    margin-top: 20px;
 }
 
-#products td, #products th {
-    border: 1px solid black;
+table th, #products td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
 }
 
-#products th {
-    width: 25%;
-    border: 1px solid black;
-    background: #ffecf0;
+table th {
+    background-color: #4caf50;
+    color: #fff;
+}
+
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Página de inicio de sesión */
+.login {
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login form {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login label {
+    display: block;
+    margin-bottom: 8px;
+}
+
+.login input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.login button {
+    background-color: #4caf50;
+    color: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.login button:hover {
+    background-color: #45a049;
 }
