@@ -4,6 +4,9 @@
     <link rel="stylesheet" href="<?=base_url?>assets/css/styles.css"/>
 </head>
 <body class="login">
+    <?php if(isset($_SESSION['error'])): ?>
+    <h3>Acceso fallido</h3>
+    <?php endif; ?>
     <div>
         <h1>Iniciar sesion</h1>
 

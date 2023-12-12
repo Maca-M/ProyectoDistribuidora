@@ -45,14 +45,20 @@ class UserController{
             if($identity && is_object($identity)){
                 $_SESSION['identity'] = $identity;
                 
-                if($identity->role == 'admin'){
+                if($identity->rol == 'admin'){
                     $_SESSION['admin'] = true;
                 }
+                
+                header("Location:".base_url."Product/index");
             }else{
                 $_SESSION['error'] = 'Acceso fallido';
+                header("Location:".base_url);
             }
+        }else{
+            $_SESSION['error'] = 'Acceso fallido';
+            header("Location:".base_url);
         }
-        header("Location:".base_url."Product/index");
+                
     }
     
 }

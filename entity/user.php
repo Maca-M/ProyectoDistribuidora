@@ -59,14 +59,14 @@ class User{
         $name = $this->name;
         $pass = $this->pass;
         
-        $sql = "SELECT * FROM users WHERE name = '$name';";
+        $sql = "SELECT * FROM users WHERE name = '$name'";
         $login = $this->db->query($sql);
         $result = false;
         
         if($login && $login->num_rows == 1){
             $user = $login->fetch_object();
             
-            $verify = password_verify($password, $user->pass);
+            $verify = password_verify($pass, $user->pass);
             
             if($verify){
                 $result = $user;
