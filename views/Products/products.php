@@ -14,13 +14,21 @@
             Precio
         </th>
     </tr>
-    <tr>
-        <td>
-            a
-        </td>
-        <td>
-            b
-        </td>
-    </tr>
+    <?php while ($prod = $products->fetch_object()): ?>
+        <tr>
+            <td>
+                <?= $prod->cod; ?>
+            </td>
+            <td>
+                <?= $prod->name; ?>
+            </td>
+            <td>
+                <?= $prod->description; ?>
+            </td>
+            <td>
+                <?= $prod->price; ?>
+            </td>
+        </tr>
+    <?php endwhile; ?>
 </table>
 

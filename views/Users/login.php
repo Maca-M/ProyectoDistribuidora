@@ -4,9 +4,11 @@
     <link rel="stylesheet" href="<?=base_url?>assets/css/styles.css"/>
 </head>
 <body class="login">
-    <?php if(isset($_SESSION['error'])): ?>
-    <h3>Acceso fallido</h3>
+    <?php if(isset($_SESSION['login']) && $_SESSION['login'] == "Acceso fallido"): ?>
+    <p class="error">Acceso fallido</p>
+    <?php Utils::deleteSession('login'); ?>
     <?php endif; ?>
+    <body class="login">
     <div>
         <h1>Iniciar sesion</h1>
 

@@ -14,12 +14,20 @@
            Fecha
         </th>
     </tr>
-    <tr>
-        <td>
-            a
-        </td>
-        <td>
-            b
-        </td>
-    </tr>
+    <?php while ($sale = $sales->fetch_object()): ?>
+        <tr>
+            <td>
+                <?= $sale->id; ?>
+            </td>
+            <td>
+                <?= $sale->client; ?>
+            </td>
+            <td>
+                <?= $sale->total; ?>
+            </td>
+            <td>
+                <?= $sale->date; ?>
+            </td>
+        </tr>
+    <?php endwhile; ?>
 </table>

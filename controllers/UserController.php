@@ -51,11 +51,11 @@ class UserController{
                 
                 header("Location:".base_url."Product/index");
             }else{
-                $_SESSION['error'] = 'Acceso fallido';
+                $_SESSION['login'] = 'Acceso fallido';
                 header("Location:".base_url);
             }
         }else{
-            $_SESSION['error'] = 'Acceso fallido';
+            $_SESSION['login'] = 'Acceso fallido';
             header("Location:".base_url);
         }
                 

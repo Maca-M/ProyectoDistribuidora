@@ -8,12 +8,14 @@
             Desc
         </th>
     </tr>
-    <tr>
-        <td>
-            a
-        </td>
-        <td>
-            b
-        </td>
-    </tr>
+    <?php while ($cli = $clients->fetch_object()): ?>
+        <tr>
+            <td>
+                <?= $cli->name; ?>
+            </td>
+            <td>
+                <?= $cli->description; ?>
+            </td>
+        </tr>
+    <?php endwhile; ?>
 </table>
