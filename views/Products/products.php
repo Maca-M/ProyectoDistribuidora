@@ -1,19 +1,29 @@
 <h3 id="h3">Productos</h3>
-<table id="products">
-    <tr>
-        <th>
-            Codigo
-        </th>
-        <th>
-            Nombre
-        </th>
-        <th>
-            Desc
-        </th>
-        <th>
-            Precio
-        </th>
-    </tr>
+
+<button id="add" href="<?=base_url?>Product/new" type="button" class="btn btn-outline-success btn-sm">
+    <i class="bi bi-plus-lg"></i>
+    Nuevo Producto
+</button>
+
+<table class="table table-hover table-bordered">
+    <thead class="table-success">
+        <tr>
+            <th>
+                Codigo
+            </th>
+            <th>
+                Nombre
+            </th>
+            <th>
+                Desc
+            </th>
+            <th>
+                Precio
+            </th>
+        </tr>
+    </thead>
+    
+    <tbody class="table-group-divider">
     <?php while ($prod = $products->fetch_object()): ?>
         <tr>
             <td>
@@ -30,5 +40,5 @@
             </td>
         </tr>
     <?php endwhile; ?>
+    </tbody>
 </table>
-

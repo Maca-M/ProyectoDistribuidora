@@ -3,6 +3,7 @@
         "spipu/html2pdf": "^5.2",
         "stefangabos/zebra_pagination": "^2.4",
         "firephp/firephp-core": "^0.5.3",
-        "twig/twig": "^3.8"
+        "twig/twig": "^3.8",
+        "twbs/bootstrap-icons": "^1.11"
     }
 }
