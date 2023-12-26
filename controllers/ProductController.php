@@ -10,7 +10,24 @@ class ProductController{
         
         require_once 'views/layouts/header.php';
         require_once 'views/Products/products.php';
+        require_once 'views/Products/new.php';
         require_once 'views/layouts/footer.php';
+    }
+
+    public function new() {
+        require_once 'views/Products/new.php';
+    }
+
+    public function save() {
+        if(isset($_POST)) {
+            $product = new Product();
+            $product->setCod($_POST['cod']);
+            $product->setName($_POST['name']);
+            $product->setDescription($_POST['description']);
+            $product->setPrice($_POST['price']);
+            $product->save();
+        }
+        header("Location:".base_url."product/index");
     }
 }
 

@@ -55,4 +55,15 @@ class Sale{
     public function getAll() {
         return $this->db->query("SELECT * FROM sales;");
     }
+
+    public function save() {
+        $sql = "INSERT INTO sales VALUES(NULL, '{$this->getClient()}', '{$this->getUser()}', '{$this->getTotal()}', CURDATE());";
+        $save = $this->db->query($sql);
+        $result = false;
+        
+        if($save){
+            $result = true;
+        }
+        return $result;
+    }
 }

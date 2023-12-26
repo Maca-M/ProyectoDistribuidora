@@ -35,6 +35,17 @@ class Client{
     }
 
     public function getAll() {
-        return $this->db->query("SELECT * FROM clients;");
+        return $this->db->query("SELECT * FROM clients ORDER BY name;");
+    }
+
+    public function save() {
+        $sql = "INSERT INTO clients VALUES(NULL, '{$this->getName()}', '{$this->getDescription()}');";
+        $save = $this->db->query($sql);
+        $result = false;
+        
+        if($save){
+            $result = true;
+        }
+        return $result;
     }
 }

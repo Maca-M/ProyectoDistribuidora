@@ -37,22 +37,33 @@ class Product{
     }
 
     public function setCod($cod): void {
-        $this->cod = $cod;
+        $this->cod = $this->db->real_escape_string($cod);
     }
 
     public function setName($name): void {
-        $this->name = $name;
+        $this->name = $this->db->real_escape_string($name);
     }
 
     public function setDescription($description): void {
-        $this->description = $description;
+        $this->description = $this->db->real_escape_string($description);
     }
 
     public function setPrice($price): void {
-        $this->price = $price;
+        $this->price = $this->db->real_escape_string($price);
     }
     
     public function getAll() {
         return $this->db->query("SELECT * FROM products;");
+    }
+
+    public function save() {
+        $sql = "INSERT INTO products VALUES(NULL, '{$this->getCod()}', '{$this->getName()}', '{$this->getDescription()}', '{$this->getPrice()}');";
+        $save = $this->db->query($sql);
+        $result = false;
+        
+        if($save){
+            $result = true;
+        }
+        return $result;
     }
 }
