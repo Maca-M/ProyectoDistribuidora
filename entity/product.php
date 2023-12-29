@@ -66,4 +66,26 @@ class Product{
         }
         return $result;
     }
+
+    public function edit() {
+        $sql = "INSERT INTO products VALUES(NULL, '{$this->getCod()}', '{$this->getName()}', '{$this->getDescription()}', '{$this->getPrice()}');";
+        $save = $this->db->query($sql);
+        $result = false;
+        
+        if($save){
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function delete() {
+        $sql = "DELETE FROM products WHERE id = {$this->getId()};";
+        $delete = $this->db->query($sql);
+        $result = false;
+        
+        if($delete){
+            $result = true;
+        }
+        return $result;
+    }
 }

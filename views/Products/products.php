@@ -42,8 +42,8 @@
                 <?= $prod->price; ?>
             </td>
             <th>
-                <button type="button" class="btn btn-outline-success btn-sm"><i class="bi bi-pencil-square"></i></button>
-                <button type="button" class="btn btn-outline-success btn-sm"><i class="bi bi-trash"></i></button>
+                <button type="button" href="<?=base_url?>Product/edit&id<?=$prod->id?>" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#edit"><i class="bi bi-pencil-square"></i></button>
+                <a href="<?=base_url?>Product/delete&id=<?=$prod->id?>" class="btn btn-outline-success btn-sm"><i class="bi bi-trash"></i></a>
             </th>
         </tr>
     <?php endwhile; ?>
