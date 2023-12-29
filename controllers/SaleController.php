@@ -28,5 +28,19 @@ class SaleController{
         }
         header("Location:".base_url."sale/index");
     }
+
+    public function edit() {
+        require_once 'views/Sale/new.php';
+    }
+
+    public function delete() {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $sale = new Sale();
+            $sale->setId($id);
+            $sale->delete();
+        }
+        header("Location:".base_url."sale/index");
+    }
 }
 

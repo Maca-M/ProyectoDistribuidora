@@ -42,7 +42,7 @@
                 <?= $sale->date; ?>
             </td>
             <th>
-                <button type="button" class="btn btn-outline-success btn-sm"><i class="bi bi-pencil-square"></i></button>
+                <button type="button" href="<?=base_url?>Sale/edit&id<?=$sale->id?>" class="btn btn-outline-success btn-sm" data-bs-toggle="modal" data-bs-target="#edit"><i class="bi bi-pencil-square"></i></button>
             </th>
         </tr>
     <?php endwhile; ?>

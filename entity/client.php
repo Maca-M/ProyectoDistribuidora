@@ -48,4 +48,26 @@ class Client{
         }
         return $result;
     }
+
+    public function edit() {
+        $sql = "UPDATE clients SET 'name' = '{$this->getName()}', 'description' = '{$this->getDescription()}' WHERE id = {$this->getId()};";
+        $save = $this->db->query($sql);
+        $result = false;
+        
+        if($save){
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function delete() {
+        $sql = "DELETE FROM clients WHERE id = {$this->getId()};";
+        $delete = $this->db->query($sql);
+        $result = false;
+        
+        if($delete){
+            $result = true;
+        }
+        return $result;
+    }
 }

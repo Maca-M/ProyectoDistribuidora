@@ -11,7 +11,6 @@ class ProductController{
         require_once 'views/layouts/header.php';
         require_once 'views/Products/products.php';
         require_once 'views/Products/new.php';
-        require_once 'views/Products/edit.php';
         require_once 'views/layouts/footer.php';
     }
 
@@ -32,7 +31,17 @@ class ProductController{
     }
 
     public function edit() {
-        require_once 'views/Products/new.php';
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $edit = true;
+            $producto = new Product();
+            $producto->setId($id);
+            $prod = $producto->getOne();
+            require_once 'views/Products/new.php';
+        }else{
+            header("Location:".base_url."product/index");
+        }
+
     }
 
     public function delete() {

@@ -66,4 +66,26 @@ class Sale{
         }
         return $result;
     }
+
+    public function edit() {
+        $sql = "UPDATE sales SET 'client' = '{$this->getClient()}', 'user' = '{$this->getUser()}', 'total' = '{$this->getTotal()}' WHERE id = {$this->getId()};";
+        $save = $this->db->query($sql);
+        $result = false;
+        
+        if($save){
+            $result = true;
+        }
+        return $result;
+    }
+
+    public function delete() {
+        $sql = "DELETE FROM sales WHERE id = {$this->getId()};";
+        $delete = $this->db->query($sql);
+        $result = false;
+        
+        if($delete){
+            $result = true;
+        }
+        return $result;
+    }
 }

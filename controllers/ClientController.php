@@ -27,5 +27,19 @@ class ClientController{
         }
         header("Location:".base_url."client/index");
     }
+
+    public function edit() {
+        require_once 'views/Clients/new.php';
+    }
+
+    public function delete() {
+        if (isset($_GET['id'])) {
+            $id = $_GET['id'];
+            $client = new Client();
+            $client->setId($id);
+            $client->delete();
+        }
+        header("Location:".base_url."client/index");
+    }
 }
 
